@@ -451,7 +451,7 @@ header {
   padding-bottom: 40px;
   height: 280px;
   position: relative;
-  background:  rgba(244,67,54 ,1.0);
+  background:  #f44336;
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
@@ -476,6 +476,10 @@ header h2 {
   line-height: 1.3;
   color: #fff;
   letter-spacing: 0;
+}
+
+header img {
+  float: left;
 }
 
 .inner {
@@ -506,10 +510,6 @@ header h2 {
   bottom: 280px;
 }
 
-#downloads {
-  margin-bottom: 40px;
-}
-
 a.button {
   width: 134px;
   height: 58px;
@@ -523,20 +523,6 @@ a.button {
 a.button small {
   display: block;
   font-size: 11px;
-}
-header a.button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: transparent url(../images/github-button.png) 0 0 no-repeat;
-}
-aside a.button {
-  display: block;
-  width: 138px;
-  padding-left: 64px;
-  margin-bottom: 20px;
-  font-size: 21px;
-  background: transparent url(../images/download-button.png) 0 0 no-repeat;
 }
 
 code, pre {
@@ -761,6 +747,14 @@ footer a:hover {
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
 
+.visible-mobile {
+  display: none !important;
+}
+
+.visible-mobile-big {
+  display: inline !important;
+}
+
 /* #Media Queries
 ================================================== */
 
@@ -771,6 +765,17 @@ footer a:hover {
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 850px) {
+  .visible-mobile {
+    display: inline !important;
+  }
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .visible-mobile-big {
+    display: inline !important;
+  }
+
   .inner {
     width: 93%;
   }
@@ -784,13 +789,13 @@ footer a:hover {
   header h1, header h2 {
     margin-left: 0;
     margin-top: 0;
-    width: 100%;
   }
   header h1 {
-    font-size: 38px;
+    font-size: 32px;
   }
   header h2 {
-    font-size: 24px;
+    margin-top: 10px;
+    font-size: 22px;
   }
   header a.button {
     position: relative;
@@ -834,9 +839,9 @@ footer a:hover {
   }
 
   #image img {
+    display: block;
     position:absolute; top:100%;
-    left: 10%;
-    width: 80%;
+    max-width: 80%;
   }
 
   #main-content h1:before,
@@ -854,5 +859,21 @@ footer a:hover {
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 @media only screen and (min-width: 480px) and (max-width: 767px) { }
 
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) { }
+/* Small Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  header h1 {
+    font-size: 28px;
+  }
+  header h2 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+}
+
+
+/* Tiny Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-height: 550px) and (max-width: 479px) {
+  .visible-mobile-big {
+    display: none !important;
+  }
+}
