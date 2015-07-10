@@ -35,19 +35,34 @@
             <h4>A simple and beautiful compass navigation app for your Android Wear smartwatch.</h4>
             Just enter an address or coordinates on your phone. Then use your watch to navigate.
             A compass points to  your destination.<br>
-            <a href="https://play.google.com/store/apps/details?id=com.wearnavigation&referrer=utm_source%3Dlanding_page"><img src="./images/get_it_on_google_play.png"/></a>
+            <a href="https://play.google.com/store/apps/details?id=com.wearnavigation&referrer=utm_source%3Dlanding_page"
+                onclick="trackOutboundLink('https://play.google.com/store/apps/details?id=com.wearnavigation&referrer=utm_source%3Dlanding_page'); return false;">
+              <img src="./images/get_it_on_google_play.png"/>
+            </a>
           </section>
       </div>
 
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-53154900-3");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("UA-53154900-3");
+          pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+    <script>
+      /**
+      * Tracks a click on an outbound link in Google Analytics.
+      */
+      var trackOutboundLink = function(url) {
+         ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+           function () {
+           document.location = url;
+           }
+         });
+      }
+    </script>
   </body>
 </html>
