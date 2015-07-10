@@ -455,11 +455,9 @@ header {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
-.top-offset {
-  position: relative;
-  top: 160px;
-  left: 450px;
-  margin-right: -450px;
+header h1, header h2 {
+  margin-left: 450px;
+  margin-top: 160px;
 }
 
 header h1 {
@@ -784,6 +782,8 @@ footer a:hover {
     position: relative;
   }
   header h1, header h2 {
+    margin-left: 0;
+    margin-top: 0;
     width: 100%;
   }
   header h1 {
